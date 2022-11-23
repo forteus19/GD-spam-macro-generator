@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GD Spam Macro Generator</title>
+  </head>
+  <body>
+    <label for="format_input">Format</label>
+    <select id="format_input">
+      <option value="plaintext">Plain Text</option>
+      <option value="mhrjson">MHR Json</option>
+      <option value="echo">Echo</option>
+    </select>
+    <br />
+    <label for="fps_input">FPS</label>
+    <input type="number" id="fps_input" />
+    <br />
+    <label for="clicks_input">Clicks</label>
+    <input type="number" id="clicks_input" />
+    <br />
+    <label for="cpf_input">CPF</label>
+    <input type="number" id="cpf_input" disabled />
+    <br />
+    <label for="p1_input">Player 1</label>
+    <input type="checkbox" id="p1_input" />
+    <br />
+    <label for="p2_input">Player 2</label>
+    <input type="checkbox" id="p2_input" />
+    <br />
+    <label for="swift_input">Swift Clicks</label>
+    <input type="checkbox" id="swift_input" />
+    <br />
+    <button id="generate_button">Generate Macro</button>
+    <br />
+    <textarea id="output_textarea" rows="30" cols="30" disabled></textarea>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"
+      integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="generators/dumpPlainText.js"></script>
+    <script src="generators/dumpMHRJson.js"></script>
+    <script src="generators/dumpEcho.js"></script>
+    <script src="main.js"></script>
+  </body>
+  <style>
+    * {
+      line-height: 125%;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-size: medium;
+    }
+
+    #output_textarea {
+      font-family: monospace;
+    }
+  </style>
+</html>
