@@ -1,3 +1,3 @@
-# GD-spam-macro-generator
+# GD spam macro generator
 
 Create perfect GD spam macros without having to use an autoclicker at high fps which would otherwise be very slow...
