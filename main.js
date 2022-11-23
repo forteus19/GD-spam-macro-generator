@@ -45,6 +45,7 @@ generate_button.addEventListener("click", function () {
         +cf_input.value,
         +rf_input.value,
         +cpf_input.value,
+        +offset_input.value,
         swift_input.checked,
         p1_input.checked,
         p2_input.checked
@@ -59,6 +60,7 @@ generate_button.addEventListener("click", function () {
         +cf_input.value,
         +rf_input.value,
         +cpf_input.value,
+        +offset_input.value,
         swift_input.checked,
         p1_input.checked,
         p2_input.checked
@@ -75,6 +77,7 @@ generate_button.addEventListener("click", function () {
         +cf_input.value,
         +rf_input.value,
         +cpf_input.value,
+        +offset_input.value,
         swift_input.checked,
         p1_input.checked,
         p2_input.checked
@@ -89,6 +92,7 @@ generate_button.addEventListener("click", function () {
         +cf_input.value,
         +rf_input.value,
         +cpf_input.value,
+        +offset_input.value,
         swift_input.checked,
         p1_input.checked,
         p2_input.checked
