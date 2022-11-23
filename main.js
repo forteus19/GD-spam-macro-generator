@@ -3,6 +3,7 @@ const fps_input = document.getElementById("fps_input");
 const clicks_input = document.getElementById("clicks_input");
 const cf_input = document.getElementById("cf_input");
 const rf_input = document.getElementById("rf_input");
+const offset_input = document.getElementById("offset_input");
 const cpf_input = document.getElementById("cpf_input");
 const p1_input = document.getElementById("p1_input");
 const p2_input = document.getElementById("p2_input");
@@ -39,11 +40,11 @@ generate_button.addEventListener("click", function () {
   switch (format_input.value) {
     case "plaintext":
       macro = dumpPlainText(
-        fps_input.value,
-        clicks_input.value,
-        cf_input.value,
-        rf_input.value,
-        cpf_input.value,
+        +fps_input.value,
+        +clicks_input.value,
+        +cf_input.value,
+        +rf_input.value,
+        +cpf_input.value,
         swift_input.checked,
         p1_input.checked,
         p2_input.checked
@@ -53,11 +54,11 @@ generate_button.addEventListener("click", function () {
       break;
     case "mhrjson":
       macro = dumpMHRJson(
-        fps_input.value,
-        clicks_input.value,
-        cf_input.value,
-        rf_input.value,
-        cpf_input.value,
+        +fps_input.value,
+        +clicks_input.value,
+        +cf_input.value,
+        +rf_input.value,
+        +cpf_input.value,
         swift_input.checked,
         p1_input.checked,
         p2_input.checked
@@ -69,11 +70,11 @@ generate_button.addEventListener("click", function () {
       break;
     case "echo":
       macro = dumpEcho(
-        fps_input.value,
-        clicks_input.value,
-        cf_input.value,
-        rf_input.value,
-        cpf_input.value,
+        +fps_input.value,
+        +clicks_input.value,
+        +cf_input.value,
+        +rf_input.value,
+        +cpf_input.value,
         swift_input.checked,
         p1_input.checked,
         p2_input.checked
@@ -83,11 +84,11 @@ generate_button.addEventListener("click", function () {
       break;
     case "tasbot":
       macro = dumpTASBOT(
-        fps_input.value,
-        clicks_input.value,
-        cf_input.value,
-        rf_input.value,
-        cpf_input.value,
+        +fps_input.value,
+        +clicks_input.value,
+        +cf_input.value,
+        +rf_input.value,
+        +cpf_input.value,
         swift_input.checked,
         p1_input.checked,
         p2_input.checked

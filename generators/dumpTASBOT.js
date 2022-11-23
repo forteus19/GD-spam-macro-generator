@@ -1,6 +1,6 @@
-function dumpTASBOT(fps, clicks, cf, rf, cpf, swift, p1, p2) {
+function dumpTASBOT(fps, clicks, cf, rf, fo, cpf, swift, p1, p2) {
   let output = {
-    fps: +fps,
+    fps: fps,
     macro: [],
   };
   if (swift) {
@@ -9,7 +9,7 @@ function dumpTASBOT(fps, clicks, cf, rf, cpf, swift, p1, p2) {
         if (p1)
           output.macro.push(
             {
-              frame: i * +rf,
+              frame: i * rf + fo,
               player_1: {
                 click: 1,
                 x_position: 0,
@@ -20,7 +20,7 @@ function dumpTASBOT(fps, clicks, cf, rf, cpf, swift, p1, p2) {
               },
             },
             {
-              frame: i * +rf,
+              frame: i * rf + fo,
               player_1: {
                 click: 2,
                 x_position: 0,
@@ -34,7 +34,7 @@ function dumpTASBOT(fps, clicks, cf, rf, cpf, swift, p1, p2) {
         if (p2)
           output.macro.push(
             {
-              frame: i * +rf,
+              frame: i * rf + fo,
               player_1: {
                 click: 0,
                 x_position: 0,
@@ -45,7 +45,7 @@ function dumpTASBOT(fps, clicks, cf, rf, cpf, swift, p1, p2) {
               },
             },
             {
-              frame: i * +rf,
+              frame: i * rf + fo,
               player_1: {
                 click: 0,
                 x_position: 0,
@@ -63,10 +63,10 @@ function dumpTASBOT(fps, clicks, cf, rf, cpf, swift, p1, p2) {
     let p;
     for (let i = 0; i < clicks * 2; i++) {
       if (holding) {
-        p = (i / 2) * (+cf + +rf);
+        p = (i / 2) * (cf + rf);
         if (p1)
           output.macro.push({
-            frame: p,
+            frame: p + fo,
             player_1: {
               click: 1,
               x_position: 0,
@@ -78,7 +78,7 @@ function dumpTASBOT(fps, clicks, cf, rf, cpf, swift, p1, p2) {
           });
         if (p2)
           output.macro.push({
-            frame: p,
+            frame: p + fo,
             player_1: {
               click: 0,
               x_position: 0,
@@ -92,7 +92,7 @@ function dumpTASBOT(fps, clicks, cf, rf, cpf, swift, p1, p2) {
       } else {
         if (p1)
           output.macro.push({
-            frame: p + +cf,
+            frame: p + cf + fo,
             player_1: {
               click: 2,
               x_position: 0,
@@ -104,7 +104,7 @@ function dumpTASBOT(fps, clicks, cf, rf, cpf, swift, p1, p2) {
           });
         if (p2)
           output.macro.push({
-            frame: p + +cf,
+            frame: p + cf + fo,
             player_1: {
               click: 0,
               x_position: 0,

@@ -1,8 +1,8 @@
-function dumpMHRJson(fps, clicks, cf, rf, cpf, swift, p1, p2) {
+function dumpMHRJson(fps, clicks, cf, rf, fo, cpf, swift, p1, p2) {
   let output = {
     _: "Generated from gd spam macro generator",
     events: [],
-    meta: { fps: +fps },
+    meta: { fps: fps },
   };
   if (swift) {
     for (let i = 0; i < clicks; i++) {
@@ -12,7 +12,7 @@ function dumpMHRJson(fps, clicks, cf, rf, cpf, swift, p1, p2) {
             {
               a: 0,
               down: true,
-              frame: i * +rf,
+              frame: i * rf + fo,
               r: 0,
               x: 0,
               y: 0,
@@ -20,7 +20,7 @@ function dumpMHRJson(fps, clicks, cf, rf, cpf, swift, p1, p2) {
             {
               a: 0,
               down: false,
-              frame: i * +rf,
+              frame: i * rf + fo,
               r: 0,
               x: 0,
               y: 0,
@@ -31,7 +31,7 @@ function dumpMHRJson(fps, clicks, cf, rf, cpf, swift, p1, p2) {
             {
               a: 0,
               down: true,
-              frame: i * +rf,
+              frame: i * rf + fo,
               p2: true,
               r: 0,
               x: 0,
@@ -40,7 +40,7 @@ function dumpMHRJson(fps, clicks, cf, rf, cpf, swift, p1, p2) {
             {
               a: 0,
               down: false,
-              frame: i * +rf,
+              frame: i * rf + fo,
               p2: true,
               r: 0,
               x: 0,
@@ -54,12 +54,12 @@ function dumpMHRJson(fps, clicks, cf, rf, cpf, swift, p1, p2) {
     let p;
     for (let i = 0; i < clicks * 2; i++) {
       if (holding) {
-        p = (i / 2) * (+cf + +rf);
+        p = (i / 2) * (cf + rf);
         if (p1)
           output.events.push({
             a: 0,
             down: true,
-            frame: p,
+            frame: p + fo,
             r: 0,
             x: 0,
             y: 0,
@@ -68,7 +68,7 @@ function dumpMHRJson(fps, clicks, cf, rf, cpf, swift, p1, p2) {
           output.events.push({
             a: 0,
             down: true,
-            frame: p,
+            frame: p + fo,
             p2: true,
             r: 0,
             x: 0,
@@ -80,7 +80,7 @@ function dumpMHRJson(fps, clicks, cf, rf, cpf, swift, p1, p2) {
           output.events.push({
             a: 0,
             down: false,
-            frame: p + +cf,
+            frame: p + cf + fo,
             r: 0,
             x: 0,
             y: 0,
@@ -89,8 +89,8 @@ function dumpMHRJson(fps, clicks, cf, rf, cpf, swift, p1, p2) {
           output.events.push({
             a: 0,
             down: false,
-            frame: p,
-            p2: true + +cf,
+            frame: p + cf + fo,
+            p2: true,
             r: 0,
             x: 0,
             y: 0,

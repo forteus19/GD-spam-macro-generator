@@ -1,6 +1,6 @@
-function dumpEcho(fps, clicks, cf, rf, cpf, swift, p1, p2) {
+function dumpEcho(fps, clicks, cf, rf, fo, cpf, swift, p1, p2) {
   let output = {
-    FPS: +fps,
+    FPS: fps,
     "Starting Frame": 0,
     "Echo Replay": [],
   };
@@ -12,13 +12,13 @@ function dumpEcho(fps, clicks, cf, rf, cpf, swift, p1, p2) {
             {
               Hold: true,
               "Player 2": false,
-              Frame: i * +rf,
+              Frame: i * rf + fo,
               "X Position": 0,
             },
             {
               Hold: false,
               "Player 2": false,
-              Frame: i * +rf,
+              Frame: i * rf + fo,
               "X Position": 0,
             }
           );
@@ -27,13 +27,13 @@ function dumpEcho(fps, clicks, cf, rf, cpf, swift, p1, p2) {
             {
               Hold: true,
               "Player 2": true,
-              Frame: i * +rf,
+              Frame: i * rf + fo,
               "X Position": 0,
             },
             {
               Hold: false,
               "Player 2": true,
-              Frame: i * +rf,
+              Frame: i * rf + fo,
               "X Position": 0,
             }
           );
@@ -44,19 +44,19 @@ function dumpEcho(fps, clicks, cf, rf, cpf, swift, p1, p2) {
     let p;
     for (let i = 0; i < clicks * 2; i++) {
       if (holding) {
-        p = (i / 2) * (+cf + +rf);
+        p = (i / 2) * (cf + rf);
         if (p1)
           output["Echo Replay"].push({
             Hold: true,
             "Player 2": false,
-            Frame: p,
+            Frame: p + fo,
             "X Position": 0,
           });
         if (p2)
           output["Echo Replay"].push({
             Hold: true,
             "Player 2": true,
-            Frame: p,
+            Frame: p + fo,
             "X Position": 0,
           });
         holding = false;
@@ -65,14 +65,14 @@ function dumpEcho(fps, clicks, cf, rf, cpf, swift, p1, p2) {
           output["Echo Replay"].push({
             Hold: false,
             "Player 2": false,
-            Frame: p + +cf,
+            Frame: p + cf + fo,
             "X Position": 0,
           });
         if (p2)
           output["Echo Replay"].push({
             Hold: false,
             "Player 2": true,
-            Frame: p + +cf,
+            Frame: p + cf + fo,
             "X Position": 0,
           });
         holding = true;
