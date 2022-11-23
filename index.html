@@ -12,13 +12,20 @@
       <option value="plaintext">Plain Text</option>
       <option value="mhrjson">MHR Json</option>
       <option value="echo">Echo</option>
+      <option value="tasbot">TASBOT</option>
     </select>
     <br />
     <label for="fps_input">FPS</label>
     <input type="number" id="fps_input" />
     <br />
-    <label for="clicks_input">Clicks</label>
+    <label for="clicks_input">Total Clicks</label>
     <input type="number" id="clicks_input" />
+    <br />
+    <label for="cf_input">Click Frames</label>
+    <input type="number" id="cf_input" />
+    <br />
+    <label for="rf_input">Release Frames</label>
+    <input type="number" id="rf_input" />
     <br />
     <label for="cpf_input">CPF</label>
     <input type="number" id="cpf_input" disabled />
@@ -45,6 +52,7 @@
     <script src="generators/dumpPlainText.js"></script>
     <script src="generators/dumpMHRJson.js"></script>
     <script src="generators/dumpEcho.js"></script>
+    <script src="generators/dumpTASBOT.js"></script>
     <script src="main.js"></script>
   </body>
   <style>
